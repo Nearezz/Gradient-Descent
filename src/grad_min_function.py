@@ -13,21 +13,26 @@ def f_prime(x):
 
 x = np.linspace(-10,0,100)
 y = f(x)
+
+print(type(y))
 plt.plot(x,y,label="f(x) = x+5^2",color="blue")
-iterations = True
+iteration = True
 
-x_old = random.uniform(-10,0)
-while (iterations): 
+x_old = np.random.uniform(-10,0)
+iterations = 0
+while (iteration): 
     if abs(f_prime(x_old)) < math.pow(10,-13):
-        iterations = False
+        print(iterations)
+        iteration = False
 
-    lr = random.uniform(0,1)
+    lr = np.random.normal(0,1) * 0.01
     x_new = x_old - (lr * f_prime(x_old)) ## important fourmula
     y_new = f(x_new)
 
     plt.plot(x_new,y_new,"ro")
     print("The new x value is: ",x_new)
     x_old = x_new
+    iterations += 1
 
 
 plt.show()
