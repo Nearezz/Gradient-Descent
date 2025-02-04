@@ -25,7 +25,7 @@ while (iteration):
         print(iterations)
         iteration = False
 
-    lr = np.random.normal(0,1) * 0.01
+    lr = np.random.normal(loc=0,scale=0.2)
     x_new = x_old - (lr * f_prime(x_old)) ## important fourmula
     y_new = f(x_new)
 
