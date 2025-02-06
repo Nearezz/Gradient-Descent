@@ -20,8 +20,4 @@ plot.plot(x,y,label="Graph of sin(x)")
 xNot = np.random.uniform(0,4*np.pi)
 
 
-for i in range(4):
-    xNew = xNot - (f_prime(xNot)/max(f_doubleprime(xNot),0.01))
-    
-    plot.plot(xNew,f(xNew),"ro")
-    xNot = xNew
+
